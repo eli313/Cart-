@@ -8,11 +8,15 @@ const NavBar = () => {
     return (
         <div className={styles.navbar}>
             <div className={styles.navProducts}>
-                <button><Link to="/products" >Products</Link></button>
+                <Link to="/products" >
+                    <button>Products</button>
+                    </Link>
             </div>
             <div className={styles.navCart}>
-                <button><Link to="/cart" >Cart</Link> :
-                <span> {state.itemCounter}</span></button>
+                <Link to="/cart" >
+                    <button>Cart : <span> {state.itemCounter}</span></button>
+                    </Link>
+                
                 
             </div>
         </div>
