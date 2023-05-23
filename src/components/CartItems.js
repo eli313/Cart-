@@ -1,19 +1,16 @@
-import React , {useContext , useEffect , useState} from "react";
-import axios from "axios";
+import React , {useContext} from "react";
 
 import { CartContext } from "../contexts/CartContextProvider";
 import styles from "./CartItems.module.css"
 import shortener from "../helpers/functions";
 
 const CartItems = (props) => {
-    const [product , setProduct] = useState({})
-
-    const {state , dispatch} = useContext(CartContext)
-    const {image , title , quantity , price} = props.data
+    const {dispatch} = useContext(CartContext)
+    const {image , title , quantity , price} = props.data;
     return (
         <div className={styles.cartItem}>
             <div>
-                <img src={image} />
+                <img src={image}  alt="product"/>
             </div>
             <div className={styles.details}>
                 <span>

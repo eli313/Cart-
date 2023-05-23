@@ -2,10 +2,6 @@ import React , {useContext} from "react";
 // styles
 import styles from "./product.module.css";
 import functions from "../helpers/functions"
-import { Link } from "react-router-dom";
-
-import trashIcon from "../assets/images/trash.svg"
-
 // Context 
 import { CartContext } from "../contexts/CartContextProvider";
 
@@ -28,13 +24,12 @@ export default function Products ({productData}) {
             return state.selectedItem[index].quantity
         }
     }
-
     return (
         <div>
             <div className={styles.productSingle}>
                     <div className={styles.card}>
                     <div className={styles.image}>
-                        <img src={productData.image} alt="somthing" />
+                        <img src={productData.image} alt="something" />
                         <span className={styles.text}>{productData.discription}</span></div>
                       <p className={styles.title}>{functions(productData.title)}</p>
                       <span className={styles.price}>{productData.price}$</span>

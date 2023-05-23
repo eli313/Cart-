@@ -4,7 +4,7 @@ import { CartContext } from "../contexts/CartContextProvider";
 import styles from "./NavBar.module.css"
 
 const NavBar = () => {
-    const { state , dispatch } = useContext(CartContext)
+    const { state } = useContext(CartContext)
     return (
         <div className={styles.navbar}>
             <div className={styles.navProducts}>
@@ -14,7 +14,7 @@ const NavBar = () => {
             </div>
             <div className={styles.navCart}>
                 <Link to="/cart" >
-                    <button>Cart : <span> {state.itemCounter}</span></button>
+                    <button>Cart</button>
                     </Link>
                 
                 

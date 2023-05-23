@@ -25,28 +25,28 @@ const cartReducer = (state , action) => {
             return {
                 ...state,
                 selectedItem : [...state.selectedItem],
-                ... sumItems(state.selectedItem)
+                ...sumItems(state.selectedItem)
             }
         case "REMOVE_ITEM" :
             const newSelected = state.selectedItem.filter(item => item.id !== action.payload.id);
             return {
                 ...state,
-                selectedItem : [... newSelected],
-                ... sumItems(state.selectedItem)
+                selectedItem : [...newSelected],
+                ...sumItems(state.selectedItem)
             }
         case "INCREASE_ITEM" :
             const indexI = state.selectedItem.findIndex(item => item.id === action.payload.id);
             state.selectedItem[indexI].quantity++;
             return {
                 ...state,
-                ... sumItems(state.selectedItem)
+                ...sumItems(state.selectedItem)
             }
         case "DECREASE_ITEM" :
             const indexD = state.selectedItem.findIndex(item => item.id === action.payload.id);
             state.selectedItem[indexD].quantity--;
             return {
                 ...state,
-                ... sumItems(state.selectedItem)
+                ...sumItems(state.selectedItem)
             }
         case "CHECKOUT" :
         return {
@@ -69,7 +69,7 @@ const cartReducer = (state , action) => {
 export const CartContext = createContext()
 
 const CartContextProvider = ({children}) => {
-    const [state , dispatch] = useReducer(cartReducer , initialState)
+    const [state , dispatch] = useReducer(cartReducer , initialState);
     
     return (
             <CartContext.Provider value={{state , dispatch}} >
